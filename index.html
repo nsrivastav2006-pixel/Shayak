@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sahayata – Local Volunteer Emergency Network</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>🤝 Sahayata</h1>
+<p class="sub">Paas ke local volunteers ko madad ke liye jodne wala network</p>
+<div class="sos">⚠️ Jaan ko khatra ho to pehle call karein: <a href="tel:112">112</a> (Emergency) · <a href="tel:108">108</a> (Ambulance)</div>
+
+<nav>
+<button id="t-help" class="on">🆘 Madad chahiye</button>
+<button id="t-vol">🙋 Volunteer bano</button>
+<button id="t-dash">📋 Requests</button>
+</nav>
+
+<section id="p-help">
+<div class="card">
+<h2>Aapko kis tarah ki madad chahiye?</h2>
+<div class="chips" id="needs"></div>
+<label>Kya hua? (short mein)</label>
+<textarea id="h-desc" placeholder="Jaise: pahad par pair fisal gaya, chalne mein dikkat hai"></textarea>
+<label>Aapka naam</label><input id="h-name">
+<label>Phone number</label><input id="h-phone" type="tel" inputmode="tel">
+<button class="btn alt full" id="h-loc">📍 Meri live location bhejo</button>
+<div class="loc" id="h-locs">Location abhi nahi li gayi.</div>
+<label class="hide" id="h-manl">Location khud likho (gaon / landmark)</label>
+<input id="h-man" class="hide" placeholder="Jaise: Kasol, nadi ke paas wala pul">
+<button class="btn full" id="h-send">Madad ki request bhejo</button>
+<div id="h-res" class="msg hide"></div>
+</div>
+</section>
+
+<section id="p-vol" class="hide">
+<div class="card">
+<h2>Local volunteer ke roop mein judo</h2>
+<label>Aapka naam</label><input id="v-name">
+<label>Phone number</label><input id="v-phone" type="tel" inputmode="tel">
+<label>Aap kis tarah ki madad kar sakte hain?</label>
+<div class="chips" id="skills"></div>
+<label>Aapka area / gaon / shehar</label><input id="v-area">
+<button class="btn alt full" id="v-loc">📍 Meri location save karo</button>
+<div class="loc" id="v-locs">Location abhi nahi li gayi.</div>
+<button class="btn full" id="v-send">Volunteer ke roop mein register karo</button>
+<div id="v-res" class="msg hide"></div>
+</div>
+</section>
+
+<section id="p-dash" class="hide">
+<div id="d-status" class="msg">Live data load ho raha hai…</div>
+<h2 style="margin-top:14px">Madad ki requests</h2>
+<div id="d-reqs"></div>
+<h2 style="margin-top:18px">Registered volunteers (<span id="d-vc">0</span>)</h2>
+<div id="d-vols"></div>
+</section>
+
+<p class="note">Note: Is page par diye gaye phone number aur location sirf zaroorat ke liye dikhte hain. Ye service professional medical help ka vikalp nahi hai.</p>
+</main>
+<script type="module" src="script.js"></script>
+</body>
+</html>

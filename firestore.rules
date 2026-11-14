@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /requests/{id} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+        && request.resource.data.phone is string
+        && request.resource.data.need is string
+        && request.resource.data.status == "open";
+      // sirf status badal sakte hain, baaki fields nahi
+      allow update: if request.auth != null
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["status"])
+        && request.resource.data.status in ["open","going","done"];
+    }
+    match /volunteers/{id} {
+      allow read, create: if request.auth != null;
+    }
+  }
+}
